@@ -1,8 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_flavor_and_provider/main.dart';
-import 'package:flutter_flavor_and_provider/providers/app_config.dart';
+
+import 'package:flavor_and_proxy_provider/providers/app_config.dart';
+import 'package:flavor_and_proxy_provider/main.dart';
 
 void main() {
   const String kPort = '3010';

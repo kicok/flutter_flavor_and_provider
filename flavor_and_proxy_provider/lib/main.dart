@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_flavor_and_provider/dashboard_screen.dart';
-import 'package:flutter_flavor_and_provider/login_screen.dart';
+
+import 'package:flavor_and_proxy_provider/dashboard_screen.dart';
+import 'package:flavor_and_proxy_provider/login_screen.dart';
 
 class MyApp extends StatelessWidget {
   final appConfiguration;
