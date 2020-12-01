@@ -10,7 +10,7 @@ void main() {
       Platform.isAndroid ? 'http://10.0.2.2:$kPort' : 'http://localhost:$kPort';
   final String dataUrl = '$baseUrl/prod';
 
-  final appConfig = Appconfig(
+  final appConfig = AppConfig(
     baseUrl: baseUrl,
     dataUrl: dataUrl,
     buildFlavor: 'prod',

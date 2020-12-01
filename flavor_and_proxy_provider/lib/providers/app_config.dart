@@ -1,11 +1,11 @@
 import 'package:meta/meta.dart';
 
-class Appconfig {
+class AppConfig {
   final String baseUrl;
   final String dataUrl;
   final String buildFlavor;
 
-  Appconfig({
+  AppConfig({
     @required this.baseUrl,
     @required this.dataUrl,
     @required this.buildFlavor,
