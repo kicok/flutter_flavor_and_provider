@@ -8,10 +8,14 @@ app.use(express.json());
 const authenticate = (req, res, next)=>{
     try {
         let token;
-        if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
-            token = req.headers['authorization'].split(' ')[1];            
-        }
-
+        if (
+            req.headers.authorization &&
+            req.headers.authorization.startsWith('Bearer')
+          ) {
+            token = req.headers.authorization.split(' ')[1];
+          }
+        console.log("~~~~~~~~");
+        console.log(req.headers.authorization);
         console.log(`token : ${token}`);
 
         if(!token){
@@ -29,7 +33,7 @@ const authenticate = (req, res, next)=>{
     } catch (error) {
         res.status(401).json({
             success:false,
-            message:error.message,
+            message:'Bearer : '+req.headers.authorization,
         });
     }
 }
