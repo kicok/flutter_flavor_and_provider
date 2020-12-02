@@ -14,13 +14,13 @@ class AuthProvider with ChangeNotifier {
 
   bool get isAuth => token != null;
 
-  AppConfig _appconfig;
+  AppConfig _appConfig;
 
-  AppConfig get appConfig => _appconfig;
+  AppConfig get appConfig => _appConfig;
 
-  set appConfig(AppConfig appconfigVal) {
-    if (_appconfig != appconfigVal) {
-      _appconfig = appconfigVal;
+  set appConfig(AppConfig appConfigVal) {
+    if (_appConfig != appConfigVal) {
+      _appConfig = appConfigVal;
       notifyListeners();
     }
   }
@@ -39,7 +39,7 @@ class AuthProvider with ChangeNotifier {
       _token = responseData['token'];
 
       if (appConfig.buildFlavor == 'dev') {
-        print('token: $token');
+        print('token: $_token');
       }
 
       final SharedPreferences prefs = await SharedPreferences.getInstance();

@@ -16,8 +16,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void initState() {
-    _checkLoggedIn();
     super.initState();
+    _checkLoggedIn();
   }
 
   _checkLoggedIn() async {
