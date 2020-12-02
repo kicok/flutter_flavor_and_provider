@@ -18,7 +18,7 @@ class AuthProvider with ChangeNotifier {
 
   AppConfig get appConfig => _appconfig;
 
-  set appconfig(AppConfig appconfigVal) {
+  set appConfig(AppConfig appconfigVal) {
     if (_appconfig != appconfigVal) {
       _appconfig = appconfigVal;
       notifyListeners();
