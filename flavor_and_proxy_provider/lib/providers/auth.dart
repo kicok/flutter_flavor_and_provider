@@ -58,7 +58,8 @@ class AuthProvider with ChangeNotifier {
   Future<bool> tryAutoLogin() async {
     try {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
-      if (!prefs.containsKey('jwtTokken')) {
+
+      if (!prefs.containsKey('jwtToken')) {
         return false;
       }
       _token = prefs.getString('jwtToken');
