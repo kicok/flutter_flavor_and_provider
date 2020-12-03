@@ -34,16 +34,11 @@ class GetDataProvider with ChangeNotifier {
     try {
       final String url = '${appConfig.dataUrl}';
 
-      print(url);
-
       final http.Response response = await http.get(url, headers: {
         'Authorization': 'Bearer ${auth.token}',
       });
-      print('response111');
       final responseData = json.decode(response.body);
-      print(auth.token);
-      print(response.statusCode);
-      print('response~~~~~');
+
       if (response.statusCode != 200 || !responseData['success']) {
         throw 'Fail to get data';
       }

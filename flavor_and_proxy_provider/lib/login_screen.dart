@@ -23,9 +23,9 @@ class _LoginScreenState extends State<LoginScreen> {
   _checkLoggedIn() async {
     try {
       final bool isLoggedIn =
+          //async ~ await 가 빠지는 바람에 에러가 났으나 추가하여 에러 해결됨
           await Provider.of<AuthProvider>(context, listen: false)
               .tryAutoLogin();
-      print(isLoggedIn);
       if (isLoggedIn) {
         Navigator.of(context).pushReplacementNamed(DashboardScreen.routeName);
       } else {
@@ -58,11 +58,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ? Center(child: CircularProgressIndicator())
               : RaisedButton(
                   child: Text('LOGIN'),
-                  onPressed: () {
+                  onPressed: () async {
                     try {
                       setState(() => _submitting = true);
 
-                      Provider.of<AuthProvider>(context, listen: false).login();
+                      await Provider.of<AuthProvider>(context, listen: false)
+                          .login();
 
                       setState(() => _submitting = false);
 

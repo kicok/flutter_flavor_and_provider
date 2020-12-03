@@ -28,7 +28,7 @@ class AuthProvider with ChangeNotifier {
   Future<void> login() async {
     try {
       final String url = '${appConfig.baseUrl}/login';
-      await Future.delayed(Duration(seconds: 2));
+      await Future.delayed(Duration(seconds: 1));
 
       final http.Response response = await http.get(url);
       final responseData = json.decode(response.body);
@@ -77,6 +77,7 @@ class AuthProvider with ChangeNotifier {
     notifyListeners();
 
     final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
     await prefs.remove('jwtToken');
   }
 }

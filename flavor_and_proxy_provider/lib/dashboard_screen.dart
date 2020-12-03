@@ -25,9 +25,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final mode = Provider.of<AppConfig>(context, listen: false);
-    final message =
-        Provider.of<GetDataProvider>(context, listen: false).message;
+    final mode = Provider.of<AppConfig>(context);
+    final message = Provider.of<GetDataProvider>(context)
+        .message; //listen:false 필요하지 않음. getData 함수에서 정의된  _message 값을 가져오기만 하면 될뿐.. notifylistenr의 영향을 받지 않음.
     return Scaffold(
       appBar: AppBar(
         title: Text(
